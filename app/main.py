@@ -73,7 +73,7 @@ def get_image(id : int, db: Session = Depends(get_db)):
 def delete_image(id: int, db: Session = Depends(get_db)):
     response = crud.delete_image(db, image_id = id)
     if not response:
-        raise HTTPException(status_code=404, detail="Item not found")
+        return {"error": "Image id:" + str(id) + "  not found"}
     else:
         if cache.get(response, 0):
             del cache[response]

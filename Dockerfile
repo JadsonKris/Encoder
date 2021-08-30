@@ -11,5 +11,4 @@ RUN pip3 install SQLAlchemy==1.4.23
 RUN pip3 install tensorflow==2.6.0
 
 COPY ./app /app
-EXPOSE 8000
 CMD ["python", "main.py"]
