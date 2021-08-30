@@ -13,7 +13,7 @@ import pytesseract
 
 
 models.Base.metadata.create_all(bind=engine)
-model = tf.keras.models.load_model('../model/model.h5')
+model = tf.keras.models.load_model('/model/model.h5')
 image_processor = ImageProcessor()
 app = FastAPI()
 
