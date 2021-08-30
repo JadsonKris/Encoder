@@ -4,7 +4,6 @@ from . import models, schemas
 
 def get_images(db: Session):
     query = db.query(models.Image).all()
-    print(query)
     return query
 
 
@@ -21,7 +20,7 @@ def delete_image(db: Session, image_id: int):
     return False
 
 
-def create_image(db: Session, image: schemas.Image):
+def create_image(db: Session, image: schemas.ImageCreate):
     new_image = models.Image(image_input=image.image_input,
                           image_output=image.image_output,
                           ocr = image.ocr)
