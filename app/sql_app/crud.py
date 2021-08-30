@@ -12,10 +12,11 @@ def get_image(db: Session, image_id: int):
 
 
 def delete_image(db: Session, image_id: int):
-    if image := get_image(db, image_id):
+    image = get_image(db, image_id)
+    if image:
         db.delete(image)
         db.commit()
-        return True
+        return image.image_input
 
     return False
 
