@@ -4,6 +4,7 @@ API deep learning as a service utilizando Tensorflow e fastAPI
 
 # instalação:
 1 sudo docker build -t api .
+
 2 sudo docker run -i --network host api
 
 
